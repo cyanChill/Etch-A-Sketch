@@ -1,19 +1,32 @@
 const container = document.querySelector("#container");
-const colorPicker = document.querySelector("#color");
 const gridSize = document.querySelector("#grid-size");
 const clear = document.querySelector("#clear");
+const greyscale = document.querySelector("#greyscale");
+const colorPicker = document.querySelector("#color");
+const colorSwitcher = document.querySelector("#color-switcher");
+const eraser = document.querySelector("#eraser");
 
 let hoverColor = "black";
+
+clear.addEventListener("click", clearGrid);
 
 colorPicker.addEventListener("change", (e) => {
   hoverColor = e.target.value;
 });
 
-clear.addEventListener("click", clearGrid);
+colorSwitcher.addEventListener("click", () => {
+  hoverColor = colorPicker.value;
+});
+
+eraser.addEventListener("click", () => {
+  hoverColor = "white";
+});
 
 /* While dragging the range slider */
 gridSize.addEventListener("input", (e) => {
-  gridSize.labels[0].innerHTML = `${e.target.value} &times; ${e.target.value}`;
+  document.querySelector(
+    "#color-label"
+  ).innerHTML = `${e.target.value} &times; ${e.target.value}`;
 });
 
 gridSize.addEventListener("change", (e) => {
