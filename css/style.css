@@ -1,9 +1,27 @@
+:root {
+  --shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  background: #fafafa;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 250ms ease-in;
+}
+
+.btn:hover {
+  transform: scale(1.025);
 }
 
 body {
@@ -21,14 +39,28 @@ body {
   display: flex;
   flex-wrap: wrap;
   background: #fff;
-  outline: 0.15rem solid black;
-  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.5);
+  outline: 0.05rem solid black;
+  box-shadow: var(--shadow);
   height: clamp(20rem, calc(min(70vh, 70vw) + 1rem), 60rem);
   width: clamp(20rem, calc(min(70vh, 70vw) + 1rem), 60rem);
 }
 
 #container .square {
   display: flex;
+}
+
+#colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#color-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #grid-changer {
