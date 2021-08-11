@@ -27,20 +27,25 @@
   background: #e6e5e5;
 }
 
+input[type="color"] {
+  width: clamp(2rem, 5vw, 2.75rem);
+  height: clamp(1rem, 5vw, 1.44rem);
+}
+
 body {
   background-color: aliceblue;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1em;
+  padding: 1em 1em 1.5em 1em;
   overflow: auto;
 }
 
 h1 {
   margin-bottom: 1em;
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
 }
 
 #container {
@@ -49,8 +54,8 @@ h1 {
   background: #fff;
   outline: 0.05rem solid black;
   box-shadow: var(--shadow);
-  height: clamp(25rem, calc(min(70vh, 70vw) + 1rem), 60rem);
-  width: clamp(25rem, calc(min(70vh, 70vw) + 1rem), 60rem);
+  height: clamp(15rem, calc(min(70vh, 70vw) + 1rem), 60rem);
+  width: clamp(15rem, calc(min(70vh, 70vw) + 1rem), 60rem);
 }
 
 #container .square {
@@ -61,6 +66,10 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 0.5em;
+}
+
+#colors .btn {
+  font-size: clamp(0.5rem, 3.5vw, 1rem);
 }
 
 #color-switcher {
@@ -74,7 +83,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5em;
+  margin: 1em 0.5em;
+  font-size: clamp(0.5rem, 3.5vw, 1rem);
 }
 
 #grid-changer label {
