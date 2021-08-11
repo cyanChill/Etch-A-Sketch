@@ -11,7 +11,11 @@ let hoverColor = "#000";
 let rainbow = false;
 let greyscale = false;
 
-clear.addEventListener("click", clearGrid);
+clear.addEventListener("click", () => {
+  clearGrid();
+  hoverColor = "#000";
+  toggleGreyRainbow(false, false);
+});
 
 colorPicker.addEventListener("input", (e) => {
   hoverColor = e.target.value;
@@ -19,24 +23,20 @@ colorPicker.addEventListener("input", (e) => {
 
 colorSwitcher.addEventListener("click", () => {
   hoverColor = colorPicker.value;
-  greyscale = false;
-  rainbow = false;
+  toggleGreyRainbow(false, false);
 });
 
 eraser.addEventListener("click", () => {
   hoverColor = "#fff";
-  greyscale = false;
-  rainbow = false;
+  toggleGreyRainbow(false, false);
 });
 
 greyScaleBtn.addEventListener("click", () => {
-  greyscale = true;
-  rainbow = false;
+  toggleGreyRainbow(true, false);
 });
 
 rainbowBtn.addEventListener("click", () => {
-  greyscale = false;
-  rainbow = true;
+  toggleGreyRainbow(false, true);
 });
 
 /* While dragging the range slider */
@@ -102,6 +102,11 @@ function randomRGB() {
     Math.floor(Math.random() * 255),
     Math.floor(Math.random() * 255),
   ];
+}
+
+function toggleGreyRainbow(grey, rainbow) {
+  greyscale = grey;
+  rainbow = rainbow;
 }
 
 /* Initialization */
