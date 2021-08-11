@@ -2,11 +2,13 @@ const container = document.querySelector("#container");
 const gridSize = document.querySelector("#grid-size");
 const clear = document.querySelector("#clear");
 const greyScaleBtn = document.querySelector("#greyscale");
+const rainbowBtn = document.querySelector("#rainbow");
 const colorPicker = document.querySelector("#color");
 const colorSwitcher = document.querySelector("#color-switcher");
 const eraser = document.querySelector("#eraser");
 
 let hoverColor = "#000";
+let rainbow = false;
 let greyscale = false;
 
 clear.addEventListener("click", clearGrid);
@@ -18,15 +20,23 @@ colorPicker.addEventListener("input", (e) => {
 colorSwitcher.addEventListener("click", () => {
   hoverColor = colorPicker.value;
   greyscale = false;
+  rainbow = false;
 });
 
 eraser.addEventListener("click", () => {
   hoverColor = "#fff";
   greyscale = false;
+  rainbow = false;
 });
 
 greyScaleBtn.addEventListener("click", () => {
   greyscale = true;
+  rainbow = false;
+});
+
+rainbowBtn.addEventListener("click", () => {
+  greyscale = false;
+  rainbow = true;
 });
 
 /* While dragging the range slider */
@@ -51,6 +61,9 @@ function changeColorOnHover(e) {
     }
     let [newR, newG, newB] = turnGreyScale(r, g, b);
     e.target.style.background = `rgb(${newR}, ${newG}, ${newB})`;
+  } else if (rainbow) {
+    let [r, g, b] = randomRGB();
+    e.target.style.background = `rgb(${r}, ${g}, ${b})`;
   } else {
     e.target.style.background = hoverColor;
   }
@@ -81,6 +94,14 @@ function turnGreyScale(r, g, b) {
   let newG = g - 25 >= 0 ? g - 25 : 0;
   let newB = b - 25 >= 0 ? b - 25 : 0;
   return [newR, newG, newB];
+}
+
+function randomRGB() {
+  return [
+    Math.floor(Math.random() * 255),
+    Math.floor(Math.random() * 255),
+    Math.floor(Math.random() * 255),
+  ];
 }
 
 /* Initialization */
