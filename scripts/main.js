@@ -83,7 +83,7 @@ function setGridSize(size) {
     squareDiv.classList.add("square");
     squareDiv.style.cssText = `display: flex; width: ${100 / size}%; height: ${
       100 / size
-    }%;`;
+    }; transition: background-color 150ms ease-in;%;`;
     squareDiv.addEventListener("mouseover", changeColorOnHover);
     container.appendChild(squareDiv);
   }
@@ -104,9 +104,9 @@ function randomRGB() {
   ];
 }
 
-function toggleGreyRainbow(grey, rainbow) {
+function toggleGreyRainbow(grey, rain) {
   greyscale = grey;
-  rainbow = rainbow;
+  rainbow = rain;
 }
 
 /* Initialization */

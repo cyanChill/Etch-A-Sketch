@@ -16,15 +16,17 @@
   border: none;
   border-radius: 0.5em;
   padding: 0.5em 1.5em;
-  background: #fafafa;
+  background: #b39cd0;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  transition: transform 250ms ease-in;
+  transition: transform 150ms ease-in;
+  font-weight: bold;
 }
 
 .btn:hover {
   transform: scale(1.025);
-  background: #e6e5e5;
+  background: #845ec2;
+  color: #fff;
 }
 
 input[type="color"] {
@@ -33,7 +35,7 @@ input[type="color"] {
 }
 
 body {
-  background-color: aliceblue;
+  background-color: #fbeaff;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
@@ -46,6 +48,7 @@ body {
 h1 {
   margin-bottom: 1em;
   font-size: clamp(1.25rem, 5vw, 2.5rem);
+  color: #845ec2;
 }
 
 #container {
@@ -60,6 +63,7 @@ h1 {
 
 #container .square {
   display: flex;
+  transition: background-color 150ms ease-in;
 }
 
 #colors {
@@ -86,6 +90,7 @@ h1 {
   align-items: center;
   margin: 1em 0.5em;
   font-size: clamp(0.8rem, 3.5vw, 1rem);
+  font-weight: bold;
 }
 
 #grid-changer label {
