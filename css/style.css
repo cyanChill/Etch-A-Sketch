@@ -54,7 +54,6 @@ h1 {
 #container {
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
   outline: 0.05rem solid black;
   box-shadow: var(--shadow);
   height: clamp(15rem, calc(min(70vh, 70vw) + 1rem), 60rem);

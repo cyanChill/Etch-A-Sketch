@@ -81,9 +81,9 @@ function setGridSize(size) {
   for (let i = 0; i < size ** 2; i++) {
     const squareDiv = document.createElement("div");
     squareDiv.classList.add("square");
-    squareDiv.style.cssText = `display: flex; width: ${100 / size}%; height: ${
+    squareDiv.style.cssText = `display: flex; background-color: #fff; transition: background-color 150ms ease-in; width: ${
       100 / size
-    }; transition: background-color 150ms ease-in;%;`;
+    }%; height: ${100 / size}%;`;
     squareDiv.addEventListener("mouseover", changeColorOnHover);
     container.appendChild(squareDiv);
   }
